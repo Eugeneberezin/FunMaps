@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055D0819239319B30038E2AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D0818239319B30038E2AA /* AppDelegate.swift */; };
+		055D081B239319B30038E2AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D081A239319B30038E2AA /* SceneDelegate.swift */; };
+		055D081D239319B30038E2AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D081C239319B30038E2AA /* ContentView.swift */; };
+		055D081F239319B50038E2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055D081E239319B50038E2AA /* Assets.xcassets */; };
+		055D0822239319B50038E2AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055D0821239319B50038E2AA /* Preview Assets.xcassets */; };
+		055D0825239319B50038E2AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055D0823239319B50038E2AA /* LaunchScreen.storyboard */; };
+		055D0830239319B50038E2AA /* FunMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D082F239319B50038E2AA /* FunMapsUITests.swift */; };
+		055D083C23931B430038E2AA /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D083B23931B430038E2AA /* MainController.swift */; };
+		055D083F23931D5E0038E2AA /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 055D083E23931D5E0038E2AA /* LBTATools */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		055D082C239319B50038E2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055D080D239319B30038E2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055D0814239319B30038E2AA;
+			remoteInfo = FunMaps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		055D0815239319B30038E2AA /* FunMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		055D0818239319B30038E2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		055D081A239319B30038E2AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		055D081C239319B30038E2AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		055D081E239319B50038E2AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		055D0821239319B50038E2AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		055D0824239319B50038E2AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		055D0826239319B50038E2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055D082B239319B50038E2AA /* FunMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		055D082F239319B50038E2AA /* FunMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunMapsUITests.swift; sourceTree = "<group>"; };
+		055D0831239319B50038E2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055D083B23931B430038E2AA /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		055D0812239319B30038E2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D083F23931D5E0038E2AA /* LBTATools in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D0828239319B50038E2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		055D080C239319B30038E2AA = {
+			isa = PBXGroup;
+			children = (
+				055D0817239319B30038E2AA /* FunMaps */,
+				055D082E239319B50038E2AA /* FunMapsUITests */,
+				055D0816239319B30038E2AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		055D0816239319B30038E2AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				055D0815239319B30038E2AA /* FunMaps.app */,
+				055D082B239319B50038E2AA /* FunMapsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		055D0817239319B30038E2AA /* FunMaps */ = {
+			isa = PBXGroup;
+			children = (
+				055D083A23931B2C0038E2AA /* Main */,
+				055D0818239319B30038E2AA /* AppDelegate.swift */,
+				055D081A239319B30038E2AA /* SceneDelegate.swift */,
+				055D081C239319B30038E2AA /* ContentView.swift */,
+				055D081E239319B50038E2AA /* Assets.xcassets */,
+				055D0823239319B50038E2AA /* LaunchScreen.storyboard */,
+				055D0826239319B50038E2AA /* Info.plist */,
+				055D0820239319B50038E2AA /* Preview Content */,
+			);
+			path = FunMaps;
+			sourceTree = "<group>";
+		};
+		055D0820239319B50038E2AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				055D0821239319B50038E2AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		055D082E239319B50038E2AA /* FunMapsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				055D082F239319B50038E2AA /* FunMapsUITests.swift */,
+				055D0831239319B50038E2AA /* Info.plist */,
+			);
+			path = FunMapsUITests;
+			sourceTree = "<group>";
+		};
+		055D083A23931B2C0038E2AA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				055D083B23931B430038E2AA /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		055D0814239319B30038E2AA /* FunMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055D0834239319B50038E2AA /* Build configuration list for PBXNativeTarget "FunMaps" */;
+			buildPhases = (
+				055D0811239319B30038E2AA /* Sources */,
+				055D0812239319B30038E2AA /* Frameworks */,
+				055D0813239319B30038E2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunMaps;
+			packageProductDependencies = (
+				055D083E23931D5E0038E2AA /* LBTATools */,
+			);
+			productName = FunMaps;
+			productReference = 055D0815239319B30038E2AA /* FunMaps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		055D082A239319B50038E2AA /* FunMapsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055D0837239319B50038E2AA /* Build configuration list for PBXNativeTarget "FunMapsUITests" */;
+			buildPhases = (
+				055D0827239319B50038E2AA /* Sources */,
+				055D0828239319B50038E2AA /* Frameworks */,
+				055D0829239319B50038E2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				055D082D239319B50038E2AA /* PBXTargetDependency */,
+			);
+			name = FunMapsUITests;
+			productName = FunMapsUITests;
+			productReference = 055D082B239319B50038E2AA /* FunMapsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		055D080D239319B30038E2AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Eugene Berezin";
+				TargetAttributes = {
+					055D0814239319B30038E2AA = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					055D082A239319B50038E2AA = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 055D0814239319B30038E2AA;
+					};
+				};
+			};
+			buildConfigurationList = 055D0810239319B30038E2AA /* Build configuration list for PBXProject "FunMaps" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 055D080C239319B30038E2AA;
+			packageReferences = (
+				055D083D23931D5E0038E2AA /* XCRemoteSwiftPackageReference "LBTATools" */,
+			);
+			productRefGroup = 055D0816239319B30038E2AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				055D0814239319B30038E2AA /* FunMaps */,
+				055D082A239319B50038E2AA /* FunMapsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		055D0813239319B30038E2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D0825239319B50038E2AA /* LaunchScreen.storyboard in Resources */,
+				055D0822239319B50038E2AA /* Preview Assets.xcassets in Resources */,
+				055D081F239319B50038E2AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D0829239319B50038E2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		055D0811239319B30038E2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D083C23931B430038E2AA /* MainController.swift in Sources */,
+				055D0819239319B30038E2AA /* AppDelegate.swift in Sources */,
+				055D081B239319B30038E2AA /* SceneDelegate.swift in Sources */,
+				055D081D239319B30038E2AA /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D0827239319B50038E2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D0830239319B50038E2AA /* FunMapsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		055D082D239319B50038E2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055D0814239319B30038E2AA /* FunMaps */;
+			targetProxy = 055D082C239319B50038E2AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		055D0823239319B50038E2AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				055D0824239319B50038E2AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		055D0832239319B50038E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		055D0833239319B50038E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		055D0835239319B50038E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FunMaps/Preview Content\"";
+				DEVELOPMENT_TEAM = JGX8KL9J9F;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FunMaps/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-FunMaps.FunMaps";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		055D0836239319B50038E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FunMaps/Preview Content\"";
+				DEVELOPMENT_TEAM = JGX8KL9J9F;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FunMaps/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-FunMaps.FunMaps";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		055D0838239319B50038E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGX8KL9J9F;
+				INFOPLIST_FILE = FunMapsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-FunMaps.FunMapsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FunMaps;
+			};
+			name = Debug;
+		};
+		055D0839239319B50038E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGX8KL9J9F;
+				INFOPLIST_FILE = FunMapsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-FunMaps.FunMapsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FunMaps;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		055D0810239319B30038E2AA /* Build configuration list for PBXProject "FunMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D0832239319B50038E2AA /* Debug */,
+				055D0833239319B50038E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055D0834239319B50038E2AA /* Build configuration list for PBXNativeTarget "FunMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D0835239319B50038E2AA /* Debug */,
+				055D0836239319B50038E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055D0837239319B50038E2AA /* Build configuration list for PBXNativeTarget "FunMapsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D0838239319B50038E2AA /* Debug */,
+				055D0839239319B50038E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		055D083D23931D5E0038E2AA /* XCRemoteSwiftPackageReference "LBTATools" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bhlvoong/LBTATools";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.16;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		055D083E23931D5E0038E2AA /* LBTATools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 055D083D23931D5E0038E2AA /* XCRemoteSwiftPackageReference "LBTATools" */;
+			productName = LBTATools;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 055D080D239319B30038E2AA /* Project object */;
+}
