@@ -35,10 +35,10 @@ class MainController: UIViewController {
         
         setupRegionForMap()
         
-//        setupAnnotationsForMap()
         performLocalSearch()
         setupSearchUI()
         setupLocationsCarousel()
+        locationsController.mainController = self
     }
     
     let locationsController = LocationsCarouselController(scrollDirection: .horizontal)
@@ -47,7 +47,7 @@ class MainController: UIViewController {
         let locationsView = locationsController.view!
             
         view.addSubview(locationsView)
-        locationsView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, size: .init(width: 0, height: 150))
+        locationsView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, size: .init(width: 0, height: 100))
     }
     
     let searchTextField = UITextField(placeholder: "Search query")
@@ -83,6 +83,12 @@ class MainController: UIViewController {
         request.naturalLanguageQuery = searchTextField.text
         request.region = mapView.region
         
+        mapView.annotations.forEach { (annotation) in
+            if annotation.title == "TEST" {
+                mapView.selectAnnotation(annotation, animated: true)
+            }
+        }
+        
         let localSearch = MKLocalSearch(request: request)
         localSearch.start { (resp, err) in
             if let err = err {
@@ -93,6 +99,7 @@ class MainController: UIViewController {
             // Success
             // remove old annotations
             self.mapView.removeAnnotations(self.mapView.annotations)
+            self.locationsController.items.removeAll()
             
             resp?.mapItems.forEach({ (mapItem) in
                 print(mapItem.address())
@@ -101,7 +108,14 @@ class MainController: UIViewController {
                 annotation.coordinate = mapItem.placemark.coordinate
                 annotation.title = mapItem.name
                 self.mapView.addAnnotation(annotation)
+                
+                // tell my locationsCarouselController
+                self.locationsController.items.append(mapItem)
             })
+            
+            if resp?.mapItems.count != 0 { self.locationsController.collectionView.scrollToItem(at: [0, 0], at: .centeredHorizontally, animated: true)
+            }
+            
             self.mapView.showAnnotations(self.mapView.annotations, animated: true)
         }
     }
@@ -151,24 +165,6 @@ struct MainPreview: PreviewProvider {
         typealias UIViewControllerType = MainController
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
