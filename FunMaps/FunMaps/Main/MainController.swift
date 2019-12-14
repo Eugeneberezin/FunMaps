@@ -14,22 +14,28 @@ extension MainController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "id")
-        annotationView.canShowCallout = true
-//        annotationView.image = #imageLiteral(resourceName: "tourist")
-        return annotationView
+        if (annotation is MKPointAnnotation) {
+            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "id")
+                    annotationView.canShowCallout = true
+            //        annotationView.image = #imageLiteral(resourceName: "tourist")
+                    return annotationView
+        }
+        return nil
+        
     }
     
 }
 
-class MainController: UIViewController {
+class MainController: UIViewController, CLLocationManagerDelegate {
     
     let mapView = MKMapView()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        requestUserLocation()
         mapView.delegate = self
+        mapView.showsUserLocation = true
         view.addSubview(mapView)
         mapView.fillSuperview()
         
@@ -39,17 +45,66 @@ class MainController: UIViewController {
         setupSearchUI()
         setupLocationsCarousel()
         locationsController.mainController = self
+        setupKeyboardListener()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        default:
+           print("Failed")
+        }
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let firstLocation = locations.first else { return }
+        mapView.setRegion(.init(center: firstLocation.coordinate, span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
+        //locationManager.stopUpdatingLocation()
+    }
+    
+    
+    fileprivate func requestUserLocation() {
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        
+        
+    }
+    
+    
+    
+    
+    fileprivate func setupKeyboardListener() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
+            
+            guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+            let keyboardFrame = value.cgRectValue
+            
+            self.anchoredConstraints.bottom?.constant = -keyboardFrame.size.height
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
+            self.anchoredConstraints.bottom?.constant = 0
+        }
     }
     
     let locationsController = LocationsCarouselController(scrollDirection: .horizontal)
+    
+    // 2. Keep a reference to the constraints we apply to the bottom collectionView
+    var anchoredConstraints: AnchoredConstraints!
     
     fileprivate func setupLocationsCarousel() {
         let locationsView = locationsController.view!
             
         view.addSubview(locationsView)
-        locationsView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, size: .init(width: 0, height: 100))
+
+        // 3. Set up the constraints here
+        anchoredConstraints = locationsView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, size: .init(width: 0, height: 100))
     }
     
+
     let searchTextField = UITextField(placeholder: "Search query")
     
     fileprivate func setupSearchUI() {
@@ -68,7 +123,7 @@ class MainController: UIViewController {
         // search on the last keystroke of text changes and basically wait 500 milliseconds
         _ = NotificationCenter.default
             .publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(100), scheduler: RunLoop.main)
             .sink { (_) in
                 self.performLocalSearch()
         }
@@ -167,32 +222,4 @@ struct MainPreview: PreviewProvider {
 }
 
 
-
-
-
-
-extension MKMapItem {
-    func address() -> String {
-        var addressString = ""
-        if placemark.subThoroughfare != nil {
-            addressString = placemark.subThoroughfare! + " "
-        }
-        if placemark.thoroughfare != nil {
-            addressString += placemark.thoroughfare! + ", "
-        }
-        if placemark.postalCode != nil {
-            addressString += placemark.postalCode! + " "
-        }
-        if placemark.locality != nil {
-            addressString += placemark.locality! + ", "
-        }
-        if placemark.administrativeArea != nil {
-            addressString += placemark.administrativeArea! + " "
-        }
-        if placemark.country != nil {
-            addressString += placemark.country!
-        }
-        return addressString
-    }
-}
 
