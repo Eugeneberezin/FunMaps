@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052294EB23B96EE200A19016 /* CustomMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052294EA23B96EE200A19016 /* CustomMapAnnotation.swift */; };
 		0536280523A592BE00CC4B94 /* MKMapItem+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0536280423A592BE00CC4B94 /* MKMapItem+Address.swift */; };
 		055D0819239319B30038E2AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D0818239319B30038E2AA /* AppDelegate.swift */; };
 		055D081B239319B30038E2AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D081A239319B30038E2AA /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052294EA23B96EE200A19016 /* CustomMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapAnnotation.swift; sourceTree = "<group>"; };
 		0536280423A592BE00CC4B94 /* MKMapItem+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapItem+Address.swift"; sourceTree = "<group>"; };
 		055D0815239319B30038E2AA /* FunMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055D0818239319B30038E2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				055D083B23931B430038E2AA /* MainController.swift */,
 				055D08402394702E0038E2AA /* LocationsCarouselController.swift */,
 				0536280423A592BE00CC4B94 /* MKMapItem+Address.swift */,
+				052294EA23B96EE200A19016 /* CustomMapAnnotation.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				0536280523A592BE00CC4B94 /* MKMapItem+Address.swift in Sources */,
 				055D083C23931B430038E2AA /* MainController.swift in Sources */,
 				055D0819239319B30038E2AA /* AppDelegate.swift in Sources */,
+				052294EB23B96EE200A19016 /* CustomMapAnnotation.swift in Sources */,
 				055D081B239319B30038E2AA /* SceneDelegate.swift in Sources */,
 				055D08412394702E0038E2AA /* LocationsCarouselController.swift in Sources */,
 				055D081D239319B30038E2AA /* ContentView.swift in Sources */,

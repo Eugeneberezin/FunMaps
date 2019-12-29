@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import LBTATools
+import CoreLocation
 
 extension MainController: MKMapViewDelegate {
     
@@ -30,6 +31,8 @@ class MainController: UIViewController, CLLocationManagerDelegate {
     
     let mapView = MKMapView()
     let locationManager = CLLocationManager()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +136,14 @@ class MainController: UIViewController, CLLocationManagerDelegate {
         performLocalSearch()
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let customAnnotation = view.annotation as? CustomMapItemAnnotation else { return }
+        
+        guard let index = self.locationsController.items.firstIndex(where: {$0.name == customAnnotation.mapItem?.name}) else { return }
+        
+        self.locationsController.collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
+    }
+    
     fileprivate func performLocalSearch() {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchTextField.text
@@ -159,9 +170,10 @@ class MainController: UIViewController, CLLocationManagerDelegate {
             resp?.mapItems.forEach({ (mapItem) in
                 print(mapItem.address())
                 
-                let annotation = MKPointAnnotation()
+                let annotation = CustomMapItemAnnotation()
+                annotation.mapItem = mapItem
                 annotation.coordinate = mapItem.placemark.coordinate
-                annotation.title = mapItem.name
+                annotation.title = "Location: " + (mapItem.name ?? "")
                 self.mapView.addAnnotation(annotation)
                 
                 // tell my locationsCarouselController

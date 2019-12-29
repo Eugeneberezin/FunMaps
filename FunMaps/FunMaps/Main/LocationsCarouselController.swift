@@ -41,8 +41,11 @@ class LocationsCarouselController: LBTAListController<LocationCell, MKMapItem> {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let annotations = mainController?.mapView.annotations
+        
+        
         annotations?.forEach({ (annotation) in
-            if annotation.title == self.items[indexPath.item].name {
+            guard let customAnnotation = annotation as? CustomMapItemAnnotation else { return }
+            if customAnnotation.mapItem?.name == self.items[indexPath.item].name {
                 mainController?.mapView.selectAnnotation(annotation, animated: true)
             }
         })
